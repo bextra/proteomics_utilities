@@ -5,6 +5,8 @@ A small toolkit for processing files necessary for proteomics analysis including
 This script takes one FASTA file as an input and reverses the N and C terminus amino acids. It returns a FASTA formatted file using the header information provided. It returns a combined file with the original and reverse sequences. The reverse sequences have a header line annotated ">REVERSE_..."
 
 ## Usage: decoy_fasta.pl <file.fasta> 
+Note: decoy_fasta.pl requires the FAlite Perl module created by Ian Korf. This can be cloned from this repository:  
+https://github.com/KorfLab/Perl_utils
 
 ###Example Input  
 	>sp|P62258|1433E_HUMAN 14-3-3 protein epsilon OS=Homo sapiens GN=YWHAE PE=1 SV=1
