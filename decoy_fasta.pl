@@ -8,7 +8,8 @@ use vars qw($opt_h);
 getopts('h');
 
 
-my $USAGE = "\nUsage: this file will take one FASTA file as an input and reverse the N and C terminal
+my $USAGE = "\nUsage: decoy_fasta.pl <file.fasta> 
+Description: This script will take one FASTA file as an input and reverse the N and C terminal
 amino acids. It will return a FASTA formatted file with the input sequences and the
 reverse sequences with the header line annotated marking REVERSE
 
@@ -23,5 +24,26 @@ Example Output
 
 if ($opt_h) {die $USAGE};
 
-print "hello world";
+die $USAGE unless @ARGV == 1;
 
+my($FASTA) = @ARGV;
+
+open(my $fh, $FASTA) or die;
+my $fasta = new FAlite($fh);
+while (my $entry = $fasta->nextEntry) {
+	my ($id) = $entry->def; # =~ /^>(\w+)/;
+	print "$id\n";
+	
+	my (@seq) = $entry->seq;
+	print @seq, "\n";
+	
+	$id =~ s/\>/\>REVERSE_/;
+	print "$id\n";
+	
+	print scalar reverse @seq;
+	print "\n";
+
+}
+close $fh;
+
+# TODO consider only printing 80 lines of sequence per line
