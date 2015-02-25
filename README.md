@@ -6,7 +6,7 @@ This script takes one FASTA file as an input and reverses the N and C terminus a
 
 ## Usage: 
 	decoy_fasta.pl <file.fasta> 
-Note: decoy_fasta.pl requires the FAlite Perl module created by Ian Korf. This can be cloned from this repository:  
+**Note:** decoy_fasta.pl requires the FAlite Perl module created by Ian Korf. This can be cloned from this repository:  
 https://github.com/KorfLab/Perl_utils
 
 ###Example Input  
