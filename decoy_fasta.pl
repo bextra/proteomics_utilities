@@ -13,6 +13,9 @@ Description: This script will take one FASTA file as an input and reverse the N 
 amino acids. It will return a FASTA formatted file with the input sequences and the
 reverse sequences with the header line annotated marking REVERSE
 
+Note: This script requires the FAlite Perl module created by Ian Korf. This can be cloned from this repository:  
+https://github.com/KorfLab/Perl_utils
+
 Example Input
 	> protein 1
 	MCTRHTSS
